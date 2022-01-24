@@ -1,0 +1,41 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<section class="vh-100">
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body p-5">
+
+            <h6 class="mb-3">Awesome Todo List</h6>
+
+            <form 
+              hx-post
+              hx-page="Index"
+              hx-page-handler="AddTodo"
+              hx-target="#task-list"
+              class="d-flex justify-content-center align-items-center mb-4">
+              <div class="form-outline flex-fill">
+                <label class="form-label" for="form3">What do you need to do today?</label>
+                <div class="input-group mb-3">
+                  <input type="text" required="required" name="text" id="form3" class="form-control form-control-lg"/>
+                  <button type="submit" class="btn btn-primary btn-lg">Add</button>
+                </div>
+              </div>
+            </form>
+
+            <!--task list-->
+            @await Html.PartialAsync("Shared/_List")
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
