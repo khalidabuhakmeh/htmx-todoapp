@@ -19,11 +19,12 @@
               hx-page="Index"
               hx-page-handler="AddTodo"
               hx-target="#task-list"
+              _="on htmx:afterOnLoad call my.reset()"
               class="d-flex justify-content-center align-items-center mb-4">
               <div class="form-outline flex-fill">
                 <label class="form-label" for="form3">What do you need to do today?</label>
                 <div class="input-group mb-3">
-                  <input type="text" required="required" name="text" id="form3" class="form-control form-control-lg"/>
+                  <input type="text" required="required" name="text" id="form3" class="form-control form-control-lg" autocomplete="off"/>
                   <button type="submit" class="btn btn-primary btn-lg">Add</button>
                 </div>
               </div>
