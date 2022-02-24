@@ -1,0 +1,16 @@
+@model HoldUp
+
+<form hx-post hx-page="HoldUp" hx-indicator=".htmx-indicator">
+    @await Html.PartialAsync("Shared/_Input")
+    <button type="submit" class="btn btn-primary mt-3">
+        <span id="loading" class="htmx-indicator spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        <span class="visually-hidden">Loading...</span>
+        Submit
+    </button>
+    @if (Model.AllGoodHere)
+    {
+        <div class="mt-3 alert alert-info">
+            🎉 All Good Here!
+        </div>
+    }
+</form>

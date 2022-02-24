@@ -1,0 +1,6 @@
+.htmx-indicator{
+    display:none;
+}
+.htmx-request{
+    display:inline-block;
+}

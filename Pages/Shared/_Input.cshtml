@@ -1,0 +1,22 @@
+@model HoldUp
+
+<div id="name-input">
+    <label asp-for="Name"></label>
+    <input type="text"
+           class="form-control form-control-lg"
+           asp-for="Name"
+           hx-post
+           hx-page="HoldUp"
+           hx-page-handler="Validate"
+           hx-trigger="change"
+           hx-target="#name-input"
+           hx-sync="closest form:abort">
+    @if (Model.HasValidationMessage)
+    {
+        <p>
+            <small class="form-text text-muted text-danger">
+                Oh poop! 💩
+            </small>
+        </p>
+    }
+</div>
